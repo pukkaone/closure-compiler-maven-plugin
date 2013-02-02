@@ -9,10 +9,10 @@ to add these features:
   it returns a namespace you can assign to an alias.
 
 
-# Configure Your Maven Project
+## Configure Your Maven Project To Use Plugin
 
 
-## Configure Maven Repository
+### Configure Maven Repository
 
 Configure your project to download the plugin from this repository:
 
@@ -20,12 +20,12 @@ Configure your project to download the plugin from this repository:
       <!-- ... -->
 
       <repository>
-        <id>pukkaone releases</id>
+        <id>pukkaone-releases</id>
         <url>https://github.com/pukkaone/maven-repository/raw/master/releases</url>
       </repository>
 
       <repository>
-        <id>pukkaone snapshots</id>
+        <id>pukkaone-snapshots</id>
         <url>https://github.com/pukkaone/maven-repository/raw/master/snapshots</url>
         <releases>
           <enabled>false</enabled>
@@ -40,7 +40,7 @@ Configure your project to download the plugin from this repository:
     </repositories>
 
 
-## Configure Plugin
+### Configure Plugin
 
 You can configure the plugin like this:
 
