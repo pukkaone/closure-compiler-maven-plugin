@@ -1,6 +1,6 @@
-.idea
-.settings
 .classpath
+.idea
 .project
+.settings
 closure-compiler-maven-plugin.iml
 target
