@@ -71,7 +71,7 @@ You can configure the plugin like this:
             <externsSourceDirectory>${closure.externs}</externsSourceDirectory>
             <entryPoints>
               <entryPoint>application.Main</entryPoint>
-            <entryPoints>
+            </entryPoints>
             <outputFile>${closure.outputFile}</outputFile>
             <compilationLevel>SIMPLE_OPTIMIZATIONS</compilationLevel>
             <merge>true</merge>
