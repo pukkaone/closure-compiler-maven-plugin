@@ -4,7 +4,7 @@ This project is forked from https://github.com/gli/closure-compiler-maven-plugin
 to add these features:
 
 * Add `<entryPoint>` configuration to include only transitive dependencies of
-  specified entry point.
+  specified entry points.
 * Patched Closure Compiler so `goog.require` can appear inside `goog.scope` and
   it returns a namespace you can assign to an alias.
 
@@ -69,7 +69,9 @@ You can configure the plugin like this:
           <configuration>
             <sourceDirectory>${closure.source}</sourceDirectory>
             <externsSourceDirectory>${closure.externs}</externsSourceDirectory>
-            <entryPoint>application.Main</entryPoint>
+            <entryPoints>
+              <entryPoint>application.Main</entryPoint>
+            <entryPoints>
             <outputFile>${closure.outputFile}</outputFile>
             <compilationLevel>SIMPLE_OPTIMIZATIONS</compilationLevel>
             <merge>true</merge>
