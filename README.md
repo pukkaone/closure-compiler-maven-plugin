@@ -1,12 +1,36 @@
 # Google Closure Compiler Maven Plugin
 
 This project is forked from https://github.com/gli/closure-compiler-maven-plugin
-to add these features:
+to implement additional features.
 
-* Add `<entryPoint>` configuration to include only transitive dependencies of
-  specified entry points.
-* Patched Closure Compiler so `goog.require` can appear inside `goog.scope` and
-  it returns a namespace you can assign to an alias.
+
+### Entry point configuration
+
+Configure the plugin to include only transitive dependencies of specified entry
+points.
+
+    <entryPoints>
+      <entryPoint>application.Main</entryPoint>
+    </entryPoints>
+
+
+### goog.require returns namespace
+
+Patched Closure Compiler so `goog.require` can appear inside `goog.scope`, and
+`goog.require` returns the namespace so you can assign it to a variable.  For
+example:
+
+    goog.provide('some.Example');
+
+    goog.scope(function() {
+      var Vec2 = goog.require('goog.math.Vec2');
+
+      some.Example = function() {
+        console.log(new Vec2());
+      };
+    });
+
+See https://code.google.com/p/closure-compiler/issues/detail?id=674
 
 
 ## Configure Your Maven Project To Use Plugin
