@@ -11,43 +11,10 @@ to add these features:
 
 ## Configure Your Maven Project To Use Plugin
 
-
-### Configure Maven Repository
-
-Configure your project to download the plugin from this repository:
-
-    <repositories>
-      <!-- ... -->
-
-      <repository>
-        <id>pukkaone-releases</id>
-        <url>https://github.com/pukkaone/maven-repository/raw/master/releases</url>
-      </repository>
-
-      <repository>
-        <id>pukkaone-snapshots</id>
-        <url>https://github.com/pukkaone/maven-repository/raw/master/snapshots</url>
-        <releases>
-          <enabled>false</enabled>
-        </releases>
-        <snapshots>
-          <enabled>true</enabled>
-          <updatePolicy>always</updatePolicy>
-        </snapshots>
-      </repository>
-
-      <!-- ... -->
-    </repositories>
-
-
-### Configure Plugin
-
-You can configure the plugin like this:
-
     <properties>
       <closure.source>src/main/js</closure.source>
       <closure.externs>src/main/externs</closure.externs>
-      <closure.outputFile>${project.build.directory}/${project.build.finalName}/compiled.js</closure.outputFile>
+      <closure.outputFile>${project.build.directory}/compiled.js</closure.outputFile>
     </properties>
 
     <build>
@@ -57,7 +24,7 @@ You can configure the plugin like this:
         <plugin>
           <groupId>com.github.pukkaone</groupId>
           <artifactId>closure-compiler-maven-plugin</artifactId>
-          <version>1.0.0-SNAPSHOT</version>
+          <version>1.0.0</version>
           <executions>
             <execution>
               <phase>process-resources</phase>
